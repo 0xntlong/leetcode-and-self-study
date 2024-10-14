@@ -17,7 +17,7 @@ class Solution:
     Return the maximum possible score you can attain after applying exactly k operations.
     The ceiling function ceil(val) is the least integer greater than or equal to val.
 
-    Example 1:
+    Example:
     Input: nums = [10,10,10,10,10], k = 5
     Output: 50
     Explanation: Apply the operation to each array element exactly once. The final score is 10 + 10 + 10 + 10 + 10 = 50.
