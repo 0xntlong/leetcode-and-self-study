@@ -1,9 +1,15 @@
-I’ve created this GitHub repository to share my personal coding journey and document my self-learning process.
+I created this GitHub repository to share my personal programming journey and document my self-learning process.
 
-And I share it on Threads platform where I share and connect with friends who have the same passion for solving algorithms and share and contribute with each other. And here is my id: leetcodedaybyday
+In addition to the Daily LeetCode Challenge, I will also post other problems that I practice daily as part of my efforts to improve my algorithm skills. My goal is to solve the entire LeetCode problem set and I will continue to update this repository until all the exercises are completed.
 
-In addition to the Daily LeetCode Challenge, I’ll also be posting other problems I practice every day as part of my effort to improve my algorithmic skills. My goal is to work through the entire LeetCode problem set, and I will keep updating this repository until I finish all the exercises.
+I will start with easy problems to build a solid foundation, then gradually move on to medium and difficult problems. I save them in a structure according to the difficulty level of the problem EASY - MEDIUM - HARD. And each entry will be equivalent to the id number of the problem on Leetcode.
 
-I’ll start with the easy-level problems to build a strong foundation, and then gradually move on to the medium and hard levels.
+I will not provide the algorithm about the time and complexity of the algorithm or any specific explanation. I will only have the problem and solution to save space.
 
-I look forward to your interest, feedback, and contributions so that we can collaborate and discover the best and most effective solutions together. Let’s conquer LeetCode and grow step by step!
+I look forward to receiving your attention, feedback and contributions so that we can cooperate and discover the best and most effective solutions together. Let's conquer LeetCode and develop step by step.
+
+For more details, readers are suggested to explore by themselves or search on the Threads platform: leetcodedaybyday .
+
+Here I share my daily algorithm solving journey according to daily leetcode and let me connect with more than 20K algorithm-loving programmers around the world.
+
+Thank you for reading.
