@@ -1,5 +1,5 @@
 """
-This file is a minimal set of solutions to leetcode problems in Python3.
+This file is a minimal set of EASY solutions to leetcode problems in Python3.
 No algorithms or reasoning are provided to save space.
 For more details, readers are suggested to explore on their own or search on Threads platform : leetcodedaybyday . Thanks for reading.
 """
