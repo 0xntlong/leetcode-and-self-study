@@ -1,6 +1,6 @@
 I created this GitHub repository to share my personal programming journey and document my self-learning process.
 
-In addition to the Daily LeetCode Challenge, I will also post other problems that I practice daily as part of my efforts to improve my algorithm skills. My goal is to solve the entire LeetCode problem set and I will continue to update this repository until all the exercises are completed.
+In addition to the Daily LeetCode Challenge, I will also post other problems that I practice daily as part of my efforts to improve my algorithm skills with Python3 and C++. My goal is to solve the entire LeetCode problem set and I will continue to update this repository until all the exercises are completed.
 
 I will start with easy problems to build a solid foundation, then gradually move on to medium and difficult problems. I save them in a structure according to the difficulty level of the problem EASY - MEDIUM - HARD. And each entry will be equivalent to the id number of the problem on Leetcode.
 
