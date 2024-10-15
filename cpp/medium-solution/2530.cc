@@ -1,9 +1,3 @@
-/*
-This file is a minimal set of MEDIUM solutions to leetcode problems in C++.
-No algorithms or reasoning are provided to save space.
-For more details, readers are suggested to explore on their own or search on Threads platform : leetcodedaybyday . Thanks for reading.
-*/
-
 #include <vector>
 #include <queue>
 #include <cmath>
