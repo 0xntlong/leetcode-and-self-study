@@ -11,6 +11,10 @@
         "unordered_map": "cpp",
         "vector": "cpp",
         "unordered_set": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "istream": "cpp",
+        "locale": "cpp",
+        "tuple": "cpp",
+        "variant": "cpp"
     }
 }
