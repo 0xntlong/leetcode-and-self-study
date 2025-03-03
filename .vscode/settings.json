@@ -18,7 +18,8 @@
         "variant": "cpp",
         "complex": "cpp",
         "map": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "iosfwd": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
