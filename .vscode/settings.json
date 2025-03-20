@@ -19,7 +19,8 @@
         "complex": "cpp",
         "map": "cpp",
         "set": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "__locale": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
