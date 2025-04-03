@@ -12,7 +12,7 @@
  */
 
 
-    function maximumTripletValue(nums: number[]): number {
+    function calculateMaximumTripletValue(nums: number[]): number {
         const n = nums.length;
         let L = new Array(n).fill(0);
         let R = new Array(n).fill(0);
