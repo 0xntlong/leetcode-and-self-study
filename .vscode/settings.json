@@ -20,7 +20,8 @@
         "map": "cpp",
         "set": "cpp",
         "iosfwd": "cpp",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "ios": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
