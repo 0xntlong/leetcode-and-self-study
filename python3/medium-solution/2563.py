@@ -22,3 +22,27 @@ class Solution:
             right = min(bisect.bisect_right(nums, upper - nums[i]), i)
             total += max(0, right - left)
         return total
+    
+
+
+
+# Another Approach 
+"""
+class Solution:
+    def countFairPairs(self, nums: List[int], lower: int, upper: int) -> int:
+        nums.sort()
+        n = len(nums)
+
+        def cnt(nums, x):
+            left, right = 0, n - 1
+            ans = 0
+            while left < right:
+                s = nums[left] + nums[right]
+                if s < x:
+                    ans += (right - left)
+                    left += 1
+                else:
+                    right -= 1
+            return ans
+        return cnt(nums, upper + 1) - cnt(nums, lower)
+"""
