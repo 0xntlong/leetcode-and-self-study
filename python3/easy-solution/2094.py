@@ -28,3 +28,26 @@ class Solution:
                         if digits[i] != 0 and nums % 2 == 0:
                             res.add(nums)
         return sorted(res)
+
+
+# Another solution using Counter 
+"""
+from collections import Counter
+class Solution:
+    def findEvenNumbers(self, digits: List[int]) -> List[int]:
+        counter = Counter(digits)
+        ans = []
+        for i in range(100, 1000, 2):
+            i0 = i % 10
+            i1 = (i // 10) % 10
+            i2 = i // 100
+            counter[i0] -= 1
+            counter[i1] -= 1
+            counter[i2] -= 1
+            if counter[i0] >= 0 and counter[i1] >= 0 and counter[i2] >= 0:
+                ans.append(i)
+            counter[i0] += 1
+            counter[i1] += 1
+            counter[i2] += 1
+        return ans
+"""
