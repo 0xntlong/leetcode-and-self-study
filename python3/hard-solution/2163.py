@@ -54,4 +54,4 @@ class Solution:
             diff_index = i - n
             curr_diff = left_diff[diff_index] - right_sum
             min_diff = min(min_diff, curr_diff)
-        return min_diff2
+        return min_diff
