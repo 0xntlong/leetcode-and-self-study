@@ -1,0 +1,74 @@
+"""
+3607. Power Grid Maintenance
+    You are given an integer c representing c power stations, each with a unique identifier id from 1 to c (1‑based indexing).
+    These stations are interconnected via n bidirectional cables, represented by a 2D array connections, where each element connections[i] = [ui, vi] indicates a connection between station ui and station vi. Stations that are directly or indirectly connected form a power grid.
+    Initially, all stations are online (operational).
+    You are also given a 2D array queries, where each query is one of the following two types:
+    [1, x]: A maintenance check is requested for station x. If station x is online, it resolves the check by itself. If station x is offline, the check is resolved by the operational station with the smallest id in the same power grid as x. If no operational station exists in that grid, return -1.
+    [2, x]: Station x goes offline (i.e., it becomes non-operational).
+    Return an array of integers representing the results of each query of type [1, x] in the order they appear.
+    Note: The power grid preserves its structure; an offline (non‑operational) node remains part of its grid and taking it offline does not alter connectivity.
+
+    
+    Example :
+    Input: c = 5, connections = [[1,2],[2,3],[3,4],[4,5]], queries = [[1,3],[2,1],[1,1],[2,2],[1,2]]
+
+    Output: [3,2,3]
+    Explanation:
+
+    Initially, all stations {1, 2, 3, 4, 5} are online and form a single power grid.
+    Query [1,3]: Station 3 is online, so the maintenance check is resolved by station 3.
+    Query [2,1]: Station 1 goes offline. The remaining online stations are {2, 3, 4, 5}.
+    Query [1,1]: Station 1 is offline, so the check is resolved by the operational station with the smallest id among {2, 3, 4, 5}, which is station 2.
+    Query [2,2]: Station 2 goes offline. The remaining online stations are {3, 4, 5}.
+    Query [1,2]: Station 2 is offline, so the check is resolved by the operational station with the smallest id among {3, 4, 5}, which is station 3.
+
+"""
+
+
+from typing import List
+
+class Solution:
+    def processQueries(self, c: int, connections: List[List[int]], queries: List[List[int]]) -> List[int]:
+        parent = list(range(c + 1))
+        def find(i):
+            while parent[i] != i:
+                parent[i] = parent[parent[i]]
+                i = parent[i]
+            return i
+
+        for u, v in connections:
+            ui, vi = find(u), find(v)
+            if ui != vi:
+                parent[vi] = ui
+        next_node = [0] * (c + 1)
+        comp_min = [0] * (c + 1)
+        hash_set = {}
+        for i in range(1, c + 1):
+            r = find(i)
+            if comp_min[r] == 0:
+                comp_min[r] = i
+            else:
+                next_node[hash_set[r]] = i
+            hash_set[r] = i
+        offline = [False] * (c + 1)
+        res = []
+        for x1, x2 in queries:
+            if x1 == 1:
+                if not offline[x2]:
+                    res.append(x2)
+                else:
+                    r = find(x2)
+                    m = comp_min[r]
+                    res.append(m if m else -1)
+            else:
+                if offline[x2]:
+                    continue
+                offline[x2] = True
+                r = find(x2)
+                if comp_min[r] == x2:
+                    y = next_node[x2]
+                    while y and offline[y]:
+                        y = next_node[y]
+                    comp_min[r] = y
+        return res
