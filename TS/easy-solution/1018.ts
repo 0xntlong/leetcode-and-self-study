@@ -16,7 +16,7 @@
 
 function prefixesDivBy5(nums: number[]): boolean[] {
     let c = 0;
-    let res = [];
+    let res: boolean[] = [];
     for (let i of nums){
         c = (c * 2 + i) % 5;
         res.push(c === 0);
