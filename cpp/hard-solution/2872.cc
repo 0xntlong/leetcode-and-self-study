@@ -44,3 +44,33 @@ private:
         return total;
     }
 };
+
+
+
+// class Solution {
+// public:
+//     int res = 0;
+//     vector<vector<int>> adj;
+//     long long DFS(int node, int parent, vector<int>& values, int k){
+//         long long total = values[node];
+//         for (int nei : adj[node]){
+//             if (nei == parent)
+//                 continue;
+//             total += DFS(nei, node, values, k);
+//         }
+//         if (total % k == 0){
+//             res++;
+//             return 0;
+//         }
+//         return total;
+//     }
+//     int maxKDivisibleComponents(int n, vector<vector<int>>& edges, vector<int>& values, int k) {
+//         adj.assign(n, vector<int>());
+//         for (auto &e : edges){
+//             adj[e[0]].push_back(e[1]);
+//             adj[e[1]].push_back(e[0]);
+//         }
+//         DFS(0, -1, values, k);
+//         return res;
+//     }
+// };
