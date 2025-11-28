@@ -37,3 +37,28 @@ class Solution:
             return total
         DFS(0, -1)
         return res
+    
+
+
+"""
+class Solution:
+    def maxKDivisibleComponents(self, n: int, edges: List[List[int]], values: List[int], k: int) -> int:
+        def DFS(node, parent):
+            total = values[node]
+            for nei in adj_list[node]:
+                if nei == parent:
+                    continue
+                total += DFS(nei, node)
+            if total % k == 0:
+                self.res += 1
+                return 0
+            return total
+        
+        adj_list = [[] for _ in range(n)]
+        for u, v in edges:
+            adj_list[u].append(v)
+            adj_list[v].append(u)
+        self.res = 0
+        DFS(0, -1)
+        return self.res
+"""
