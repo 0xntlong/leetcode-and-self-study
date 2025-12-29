@@ -26,5 +26,5 @@ function countNegatives(grid: number[][]): number {
     for (const row of grid){
         count += countRow(row);
     }
-    return count;a
+    return count;
 };
