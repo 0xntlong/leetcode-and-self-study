@@ -33,5 +33,24 @@ public:
             }
         }
         return (neg_cnt & 1) ? res - 2 * min_matrix : res;
+
+
+        // long long total = 0;
+        // int cnt = 0;
+        // int mini = INT_MAX;
+        // int row = matrix.size();
+        // int col = matrix[0].size();
+        // for (int i = 0; i < row; i++){
+        //     for (int j = 0; j < col; j++){
+        //         total += abs(matrix[i][j]);
+        //         if (matrix[i][j] < 0){
+        //             cnt++;
+        //         }
+        //         mini = min(mini, abs(matrix[i][j]));
+        //     }
+        // }
+        // if (cnt % 2)
+        //     total -= 2 * mini;
+        // return total;
     }
 };
