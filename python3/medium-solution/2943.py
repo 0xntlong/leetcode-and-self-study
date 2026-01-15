@@ -11,3 +11,20 @@
     The left image shows the initial grid formed by the bars. The horizontal bars are [1,2,3,4], and the vertical bars are [1,2,3].
     One way to get the maximum square-shaped hole is by removing horizontal bar 2 and vertical bar 2.
 """
+
+
+
+class Solution:
+    def find(self, bars):
+        bars.sort()
+        longest = curr = 2
+        for i in range(1, len(bars)):
+            if bars[i] == bars[i - 1] + 1:
+                curr += 1
+                longest = max(longest, curr)
+            else:
+                curr = 2
+        return longest
+    def maximizeSquareHoleArea(self, n: int, m: int, hBars: List[int], vBars: List[int]) -> int:
+        return((min(self.find(hBars), self.find(vBars)))**2)
+        
