@@ -11,3 +11,24 @@
     The left image shows the initial grid formed by the bars. The horizontal bars are [1,2,3,4], and the vertical bars are [1,2,3].
     One way to get the maximum square-shaped hole is by removing horizontal bar 2 and vertical bar 2.
  */
+
+
+
+function maximizeSquareHoleArea(n: number, m: number, hBars: number[], vBars: number[]): number {
+    const findLen = (bars: number[]): number => {
+        bars.sort((a, b) => a - b);
+        let longest = 1, curr = 1;
+        for (let i = 1; i < bars.length; i++) {
+            if (bars[i] === bars[i - 1] + 1) {
+                curr++;
+                longest = Math.max(longest, curr);
+            } else {
+                curr = 1;
+            }
+        }
+        return longest;
+    };
+
+    const side = 1 + Math.min(findLen(hBars), findLen(vBars));
+    return side * side;
+};
