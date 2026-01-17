@@ -1,0 +1,39 @@
+/**
+3047. Find the Largest Area of Square Inside Two Rectangles
+    There exist n rectangles in a 2D plane with edges parallel to the x and y axis. You are given two 2D integer arrays bottomLeft and topRight where bottomLeft[i] = [a_i, b_i] and topRight[i] = [c_i, d_i] represent the bottom-left and top-right coordinates of the ith rectangle, respectively.
+    You need to find the maximum area of a square that can fit inside the intersecting region of at least two rectangles. Return 0 if such a square does not exist.
+    Example :
+    Input: bottomLeft = [[1,1],[2,2],[3,1]], topRight = [[3,3],[4,4],[6,6]]
+    Output: 1
+    Explanation:
+    A square with side length 1 can fit inside either the intersecting region of rectangles 0 and 1 or the intersecting region of rectangles 1 and 2. Hence the maximum area is 1. It can be shown that a square with a greater side length can not fit inside any intersecting region of two rectangles.
+ */
+
+
+
+/**
+ * @param {number[][]} bottomLeft
+ * @param {number[][]} topRight
+ * @return {number}
+ */
+var largestSquareArea = function(bottomLeft, topRight) {
+    const n = bottomLeft.length;
+    let maxSquare = 0;
+
+    for (let i = 0; i < n - 1; i++) {
+        for(let j = i + 1; j < n; j++){
+            const min_x = Math.max(bottomLeft[i][0], bottomLeft[j][0]); 
+            const max_x = Math.min(topRight[i][0], topRight[j][0]);     
+            const min_y = Math.max(bottomLeft[i][1], bottomLeft[j][1]); 
+            const max_y = Math.min(topRight[i][1], topRight[j][1]);
+            
+            if (min_x < max_x && min_y < max_y) {
+                const square = Math.min(max_x - min_x, max_y - min_y);
+                maxSquare = Math.max(maxSquare, square ** 2);
+            }
+        }
+
+    }
+
+    return maxSquare;
+};
