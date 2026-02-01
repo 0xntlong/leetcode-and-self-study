@@ -9,7 +9,7 @@
     Explanation: The smallest character that is lexicographically greater than 'a' in letters is 'c'.
 """
 
-
+from typing import List
 
 class Solution:
     def nextGreatestLetter(self, letters: List[str], target: str) -> str:
