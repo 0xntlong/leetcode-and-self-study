@@ -14,7 +14,7 @@
 
 
 
-function separateSquares(squares: number[][]): number {
+function separateSquares1(squares: number[][]): number {
     let total = 0n;
     const diff = new Map<bigint, bigint>();
 
