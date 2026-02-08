@@ -14,7 +14,7 @@
 
 
 
-function minimumDeletions(s: string): number {
+function minimumDeletions1(s: string): number {
     let res: number = 0;
     let count: number = 0;
 
