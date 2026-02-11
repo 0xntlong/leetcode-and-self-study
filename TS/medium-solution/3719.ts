@@ -13,7 +13,7 @@
  */
 
 
-function longestBalanced(nums: number[]): number {
+function longestBalancedI(nums: number[]): number {
     const n = nums.length;
     let res = 0;
     for (let i = 0; i < n; i++) {
