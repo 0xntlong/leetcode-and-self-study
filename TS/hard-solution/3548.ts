@@ -22,7 +22,7 @@
 
 
 
-function canPartitionGrid(grid: number[][]): boolean {
+function canPartitionGrid1(grid: number[][]): boolean {
     let total: number = 0;
     let rows: number = grid.length;
     if (rows === 0) 
