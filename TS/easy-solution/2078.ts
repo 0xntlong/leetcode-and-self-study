@@ -13,7 +13,7 @@
     Note that houses 3 and 6 can also produce the optimal answer.
 */
 
-function maxDistance(colors: number[]): number {
+function maxDistance1(colors: number[]): number {
     let dis = 0;
     const n = colors.length;
     for (let x = 0; x < n; x++) {
