@@ -1,0 +1,58 @@
+"""
+1391. Check if There is a Valid Path in a Grid
+    You are given an m x n grid. Each cell of grid represents a street. The street of grid[i][j] can be:
+    1 which means a street connecting the left cell and the right cell.
+    2 which means a street connecting the upper cell and the lower cell.
+    3 which means a street connecting the left cell and the lower cell.
+    4 which means a street connecting the right cell and the lower cell.
+    5 which means a street connecting the left cell and the upper cell.
+    6 which means a street connecting the right cell and the upper cell.
+    You will initially start at the street of the upper-left cell (0, 0). A valid path in the grid is a path that starts from the upper left cell (0, 0) and ends at the bottom-right cell (m - 1, n - 1). The path should only follow the streets.
+    Notice that you are not allowed to change any street.
+    Return true if there is a valid path in the grid or false otherwise.
+
+    Example :
+    Input: grid = [[2,4,3],[6,5,2]]
+    Output: true
+    Explanation: As shown you can start at cell (0, 0) and visit all the cells of the grid to reach (m - 1, n - 1).
+"""
+
+from typing import List
+from collections import deque
+
+class Solution:
+    def hasValidPath(self, grid: List[List[int]]) -> bool:
+        dirs = {
+            1: {0, 1},
+            2: {2, 3},
+            3: {0, 3},
+            4: {1, 3},
+            5: {0, 2},
+            6: {1, 2}, 
+        }
+        moves = [
+            (0, -1, 0, 1),
+            (0, 1, 1, 0),
+            (-1, 0, 2, 3),
+            (1, 0, 3, 2),
+        ]
+        rows = len(grid)
+        cols = len(grid[0])
+        visited = [[False] * cols for _ in range(rows)]
+        visited[0][0] = True
+        queue = deque([(0, 0)])
+ 
+        while queue:
+            row, col = queue.popleft()
+            if row == rows - 1 and col == cols - 1:
+                return True
+            for dr, dc, dx, dy in moves:
+                nr = row + dr
+                nc = col + dc
+                if (0 <= nr < rows and 0 <= nc < cols
+                        and not visited[nr][nc]
+                        and dx in dirs[grid[row][col]]
+                        and dy in dirs[grid[nr][nc]]):
+                    visited[nr][nc] = True
+                    queue.append((nr, nc))
+        return False
