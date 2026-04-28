@@ -41,3 +41,29 @@ class Solution {
             return op;
         }
     };
+
+    /**
+    class Solution {
+        public:
+            int minOperations(vector<vector<int>>& grid, int x) {
+                vector<int> res;
+                for (auto& row : grid){
+                    for (int v : row){
+                        res.push_back(v);
+                    }
+                }
+                int mod = res[0] % x;
+                for (int i : res){
+                    if (i % x != mod)
+                        return -1;
+                }
+                sort(res.begin(), res.end());
+                int m = res[res.size() / 2];
+                int cnt = 0;
+                for (int i : res){
+                    cnt += abs(i - m) / x;
+                }
+                return cnt;
+            }
+        };
+     */
