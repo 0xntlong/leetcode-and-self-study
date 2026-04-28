@@ -38,3 +38,23 @@ class Solution:
             res = min(res, arr.pop() + curr + nxt)
             curr, nxt = curr + count[n], curr + nxt
         return res
+    
+
+    """
+    class Solution:
+    def minOperations(self, grid: List[List[int]], x: int) -> int:
+        res = []
+        for r in grid:
+            res.extend(r)
+        mod = res[0] % x
+        for i in res:
+            if i % x != mod:
+                return -1
+        res.sort()
+        m = res[len(res) // 2]
+        cnt = 0 
+        for i in res:
+            cnt += abs(i - m) // x
+        return cnt
+
+    """
