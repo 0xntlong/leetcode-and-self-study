@@ -28,3 +28,14 @@ class Solution:
                 break
             count += 1
         return count
+
+        """
+        res = []
+        for num in nums:
+            if num > 9:
+                for i in str(num):
+                    res.append(int(i))
+            else:
+                res.append(num)
+        return res
+        """
