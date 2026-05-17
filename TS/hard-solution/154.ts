@@ -13,7 +13,7 @@
 
 
 
-function findMin(nums: number[]): number {
+function findMin1(nums: number[]): number {
     let l = 0;
     let r = nums.length - 1;
 
