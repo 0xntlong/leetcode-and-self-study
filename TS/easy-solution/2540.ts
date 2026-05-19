@@ -10,12 +10,7 @@
 */
 
 
-/**
- * @param {number[]} nums1
- * @param {number[]} nums2
- * @return {number}
- */
-var getCommon = function(nums1, nums2) {
+function getCommon(nums1: number[], nums2: number[]): number {
     let s1 = 0;
     let s2 = 0;
     const n1 = nums1.length;
