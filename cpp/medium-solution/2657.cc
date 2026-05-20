@@ -30,5 +30,21 @@ public:
             common[i] = (setA & setB).count();
         }
         return common;
+        // int n = A.size();
+        // vector<int> res;
+        // vector<int> count(n + 1, 0);
+        // int common = 0;
+        // for (int i = 0; i < n; i++) {
+        //     count[A[i]]++;
+        //     if (count[A[i]] == 2) {
+        //         common++;
+        //     }
+        //     count[B[i]]++;
+        //     if (count[B[i]] == 2) {
+        //         common++;
+        //     }
+        //     res.push_back(common);
+        // }
+        // return res;
     }
 };
