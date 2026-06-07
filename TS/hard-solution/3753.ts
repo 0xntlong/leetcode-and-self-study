@@ -23,7 +23,7 @@
 
 
 
-function totalWaviness(num1: number, num2: number): number {
+function totalWaviness1(num1: number, num2: number): number {
     const getDir = (a: number, b: number): number => {
         if (a < b) 
             return 0;
