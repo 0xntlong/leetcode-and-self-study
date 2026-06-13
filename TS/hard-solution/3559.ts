@@ -19,7 +19,7 @@
 
 
 
-function assignEdgeWeights(edges: number[][], queries: number[][]): number[] {
+function assignEdgeWeights1(edges: number[][], queries: number[][]): number[] {
     const MOD = 1000000007;
     const n = edges.length + 1;
     const adj: number[][] = Array.from({ length: n + 1 }, () => []);
