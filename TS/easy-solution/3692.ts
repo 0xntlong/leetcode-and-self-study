@@ -16,7 +16,7 @@
  */
 
 
-function minJumps(nums: number[]): number {
+function minJumps1(nums: number[]): number {
     const n: number = nums.length;
     if (n <= 1) 
         return 0;
