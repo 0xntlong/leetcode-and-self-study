@@ -22,7 +22,7 @@
 
 
 
-function zigZagArrays(n: number, l: number, r: number): number {
+function zigZagArrays1(n: number, l: number, r: number): number {
     const MOD = 1000000007;
     const m = r - l + 1;
     let dp: number[] = Array(m).fill(1);
