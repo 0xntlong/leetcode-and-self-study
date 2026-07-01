@@ -11,7 +11,7 @@
 
 
 
-function numberOfSubstrings(s: string): number {
+function numberOfSubstrings1(s: string): number {
     const dp: number[] = [0, 0, 0];
     let left = 0, res = 0;
     const n = s.length;
