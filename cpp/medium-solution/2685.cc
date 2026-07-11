@@ -55,3 +55,64 @@ class Solution {
             return res;
         }
     };
+
+
+
+/**
+    class Solution {
+public:
+    int countCompleteComponents(int n, vector<vector<int>>& edges) {
+        vector<vector<int>> adj(n);
+
+        for (auto& edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+
+            adj[u].push_back(v);
+            adj[v].push_back(u);
+        }
+
+        vector<bool> visited(n, false);
+
+        auto bfs = [&](int start) {
+            queue<int> q;
+            q.push(start);
+            visited[start] = true;
+
+            int nodes = 0;
+            int edgeCount = 0;
+
+            while (!q.empty()) {
+                int curr = q.front();
+                q.pop();
+
+                nodes++;
+                edgeCount += adj[curr].size();
+
+                for (int nei : adj[curr]) {
+                    if (visited[nei]) {
+                        continue;
+                    }
+
+                    visited[nei] = true;
+                    q.push(nei);
+                }
+            }
+
+            edgeCount /= 2;
+
+            return edgeCount == nodes * (nodes - 1) / 2;
+        };
+
+        int res = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                res += bfs(i);
+            }
+        }
+
+        return res;
+    }
+};
+ */
