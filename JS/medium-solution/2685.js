@@ -54,3 +54,59 @@ var countCompleteComponents = function(n, edges) {
     }
     return res;
 };
+
+
+
+
+/**
+var countCompleteComponents = function(n, edges) {
+    const adj = Array.from({ length: n }, () => []);
+
+    for (const [u, v] of edges) {
+        adj[u].push(v);
+        adj[v].push(u);
+    }
+
+    const visited = Array(n).fill(false);
+
+    const bfs = (start) => {
+        const queue = [start];
+        let head = 0;
+
+        visited[start] = true;
+
+        let nodes = 0;
+        let edgeCount = 0;
+
+        while (head < queue.length) {
+            const curr = queue[head++];
+
+            nodes++;
+            edgeCount += adj[curr].length;
+
+            for (const nei of adj[curr]) {
+                if (visited[nei]) {
+                    continue;
+                }
+
+                visited[nei] = true;
+                queue.push(nei);
+            }
+        }
+
+        edgeCount = Math.floor(edgeCount / 2);
+
+        return edgeCount === nodes * (nodes - 1) / 2;
+    };
+
+    let res = 0;
+
+    for (let i = 0; i < n; i++) {
+        if (!visited[i] && bfs(i)) {
+            res++;
+        }
+    }
+
+    return res;
+};
+ */
