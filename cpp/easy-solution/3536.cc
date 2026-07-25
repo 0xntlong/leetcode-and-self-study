@@ -1,0 +1,31 @@
+/**
+3536. Maximum Product of Two Digits
+    You are given a positive integer n.
+    Return the maximum product of any two digits in n.
+    Note: You may use the same digit twice if it appears more than once in n.
+
+
+    Example :
+    Input: n = 31
+    Output: 3
+    Explanation:
+
+    The digits of n are [3, 1].
+    The possible products of any two digits are: 3 * 1 = 3.
+    The maximum product is 3.
+ */
+
+
+
+class Solution {
+public:
+    int maxProduct(int n) {
+        string s = to_string(n);
+        sort(s.begin(), s.end());
+
+        int d1 = s[s.size() - 2] - '0';
+        int d2 = s[s.size() - 1] - '0';
+
+        return d1 * d2;
+    }
+};
