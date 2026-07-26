@@ -17,7 +17,7 @@
 
 
 
-function maxProduct(n: number): number {
+function maxProduct1(n: number): number {
     const s = String(n).split('').sort();
 
     const d1 = Number(s[s.length - 2]);
