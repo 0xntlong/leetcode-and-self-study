@@ -12,7 +12,7 @@
  */
 
 
-function isValid(s: string): boolean {
+function isValid1(s: string): boolean {
     const a: string[] = [];
 
     for (let i = 0; i < s.length; i++) {
