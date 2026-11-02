@@ -1,0 +1,31 @@
+/**
+462. Minimum Moves to Equal Array Elements II
+    Given an integer array nums of size n, return the minimum number of moves required to make all array elements equal.
+    In one move, you can increment or decrement an element of the array by 1.
+    Test cases are designed so that the answer will fit in a 32-bit integer.
+    Example :
+    Input: nums = [1,2,3]
+    Output: 2
+    Explanation:
+    Only two moves are needed (remember each move increments or decrements one element):
+    [1,2,3]  =>  [2,2,3]  =>  [2,2,2]
+ */
+
+
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var minMoves2 = function(nums) {
+    nums.sort((a, b) => a - b);
+
+    const median = nums[Math.floor(nums.length / 2)];
+    let count = 0;
+
+    for (const num of nums) {
+        count += Math.abs(num - median);
+    }
+
+    return count;
+};
