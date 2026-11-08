@@ -13,7 +13,7 @@
  */
 
 
-function countServers(n: number, logs: number[][], x: number, queries: number[]): number[] {
+function countServers1(n: number, logs: number[][], x: number, queries: number[]): number[] {
     logs.sort((a, b) => a[1] - b[1]);
 
     const orderedQueries: number[][] = queries.map((q, i) => [q, i]);
