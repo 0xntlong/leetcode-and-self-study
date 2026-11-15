@@ -1,0 +1,31 @@
+/**
+1524. Number of Sub-arrays With Odd Sum
+    Given an array of integers arr, return the number of subarrays with an odd sum.
+    Since the answer can be very large, return it modulo 109 + 7.
+
+    Example :
+    Input: arr = [1,3,5]
+    Output: 4
+    Explanation: All subarrays are [[1],[1,3],[1,3,5],[3],[3,5],[5]]
+    All sub-arrays sum are [1,4,9,3,8,5].
+    Odd sums are [1,9,3,5] so the answer is 4.
+ */
+
+/**
+ * @param {number[]} arr
+ * @return {number}
+ */
+var numOfSubarrays = function(arr) {
+    const MOD = 10 ** 9 + 7;
+    let prefix_sum = 0;
+    let odd_count = 0;
+
+    for (const i of arr) {
+        prefix_sum += i;
+        odd_count += prefix_sum % 2;
+    }
+
+    odd_count += (arr.length - odd_count) * odd_count;
+
+    return odd_count % MOD;
+};
