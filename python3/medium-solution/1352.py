@@ -51,3 +51,28 @@ class ProductOfNumbers:
 # obj = ProductOfNumbers()
 # obj.add(num)
 # param_2 = obj.getProduct(k)
+
+
+
+"""
+class ProductOfNumbers:
+    def __init__(self):
+        self.array = [1]
+
+    def add(self, num: int) -> None:
+        if num == 0:
+            self.array = [1]
+            return
+        self.array.append(self.array[-1] * num)
+
+    def getProduct(self, k: int) -> int:
+        last = len(self.array) - 1 - k
+        if last < 0:
+            return 0
+        return self.array[-1] // self.array[last]
+
+# Your ProductOfNumbers object will be instantiated and called as such:
+# obj = ProductOfNumbers()
+# obj.add(num)
+# param_2 = obj.getProduct(k)
+"""
