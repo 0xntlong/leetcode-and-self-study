@@ -14,7 +14,7 @@
 """
 
 from ast import List
-
+from itertools import pairwise
 
 class Solution:
     def maxSelectedElements(self, nums: List[int]) -> int:
